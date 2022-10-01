@@ -26,15 +26,15 @@ export function useFragment<TType>(
 export function useFragment<TType>(
   _documentNode: DocumentNode<TType, any>,
   fragmentType: ReadonlyArray<FragmentType<DocumentNode<TType, any>>>
-): readonly TType[];
+): ReadonlyArray<TType>;
 // return array of nullable if `fragmentType` is array of nullable
 export function useFragment<TType>(
   _documentNode: DocumentNode<TType, any>,
   fragmentType: ReadonlyArray<FragmentType<DocumentNode<TType, any>>> | null | undefined
-): readonly TType[] | null | undefined
+): ReadonlyArray<TType> | null | undefined
 export function useFragment<TType>(
   _documentNode: DocumentNode<TType, any>,
   fragmentType: FragmentType<DocumentNode<TType, any>> | ReadonlyArray<FragmentType<DocumentNode<TType, any>>> | null | undefined
-): TType | readonly TType[] | null | undefined {
+): TType | ReadonlyArray<TType> | null | undefined {
   return fragmentType as any
 }

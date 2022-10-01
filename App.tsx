@@ -5,7 +5,6 @@ import { TailwindProvider } from 'tailwind-rn';
 import { ApolloProvider } from '@apollo/client';
 import { NavigationContainer } from '@react-navigation/native';
 
-import getEnvVars from './env';
 import { client } from './src/Apollo';
 import RootNavigator from './src/Navigator/RootNavigator';
 import utilities from './tailwind.json';
@@ -23,7 +22,7 @@ export default function App() {
   if (!fontsLoaded) {
     return <ActivityIndicator />;
   }
-  console.warn('as', getEnvVars().stepzenApiUrl);
+
   return (
     // @ts-expect-error - TailwindProvider is missing a type definition
     <TailwindProvider utilities={utilities}>
