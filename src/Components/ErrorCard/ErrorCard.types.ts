@@ -1,3 +1,3 @@
 export interface ErrorCardProps {
-  onRefetch?: () => Promise<void>;
+  onRefetch?: () => Promise<any>;
 }

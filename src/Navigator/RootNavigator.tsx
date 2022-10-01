@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import CustomerOrderHeader from '../Components/CustomerOrderHeader/CustomerOrderHeader';
 import ModalScreen from '../Screens/ModalScreen/ModalScreen';
+import OrderScreen from '../Screens/OrderScreen/OrderScreen';
 import { RootStackParamList } from './Navigator.types';
 import TabNavigator from './TabNavigator';
 
@@ -28,6 +29,9 @@ export default function RootNavigator() {
           name="MyModal"
           component={ModalScreen}
         />
+      </RootStack.Group>
+      <RootStack.Group>
+        <RootStack.Screen name="Order" component={OrderScreen} />
       </RootStack.Group>
     </RootStack.Navigator>
   );

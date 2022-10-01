@@ -2,9 +2,9 @@ import { ActivityIndicator, FlatList } from 'react-native';
 
 import { useRoute } from '@react-navigation/native';
 
+import DeliveryCard from '../../Components/DeliveryCard/DeliveryCard';
 import ErrorCard from '../../Components/ErrorCard/ErrorCard';
 import { useCustomerOrders } from '../../Hooks/useCustomerOrders';
-import DeliveryCard from './components/DeliveryCard/DeliveryCard';
 import { ModalScrenRouteProp } from './ModalScreen.types';
 
 export default function ModalScreen() {
