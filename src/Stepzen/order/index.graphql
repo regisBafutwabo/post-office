@@ -1,0 +1,32 @@
+type Order {
+  carrier: String
+  createdAt: Date
+  shippingCost: Int
+  trackingId: String
+  Address: String
+  City: String
+  Lat: Float
+  Lng: Float
+  trackingItems: TrackingItems
+    @materializer(query:"getTrackingItemsById" arguments: [{name:"id", field:"trackingId"}])
+}
+
+type OrderList {
+  name: String
+  value: Order
+}
+
+type Query {
+  """
+  Result typed as JSON since it has fields ["-N6rOvLXK2t39x-Bp0UP", "-N6rQ_YDMNTjq_mCbhZN", "-N6rQsEqX4vt-0cBA336", "-N6rQvnBSkz2kglMvr5H", "-N6rSQz62DlXFPbd32CD"] that are invalid graphql identifiers
+  """
+  getOrders: [OrderList]
+    @rest(
+      endpoint: "https://ups-stepzen-160aa-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json"
+      transforms: [{pathpattern:[], editor:"objectToArray"}]
+    )
+  getOrdersById(id:ID!): Order
+    @rest(
+      endpoint: "https://ups-stepzen-160aa-default-rtdb.asia-southeast1.firebasedatabase.app/orders/$id.json"
+    )
+}

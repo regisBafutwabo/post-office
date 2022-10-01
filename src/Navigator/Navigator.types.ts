@@ -1,10 +1,12 @@
-export type RootStackParamList = {
-    Main: undefined;
-    MyModal: {userId: string; name:string};
-    order: {order:any}
+import { ParamListBase } from '@react-navigation/native';
+
+export interface RootStackParamList extends ParamListBase {
+  Main: any;
+  MyModal: { userId: string; name: string };
+  order: { order: any };
 }
 
-export type TabStackParamList={
-    Customers: undefined;
-    Orders: undefined;
+export interface TabStackParamList extends ParamListBase {
+  Customers: undefined;
+  Orders: undefined;
 }
