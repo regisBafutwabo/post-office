@@ -1,16 +1,12 @@
-import React from 'react';
-
-import {
-  SafeAreaView,
-  Text,
-} from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
 import { useTailwind } from 'tailwind-rn/dist';
 
 export default function OrdersScreen() {
-    const tw= useTailwind()
+  const tw = useTailwind();
+
   return (
-    <SafeAreaView >
+    <SafeAreaView>
       <Text style={tw('text-blue-600')}>OrdersScreen</Text>
-      </SafeAreaView >
-  )
+    </SafeAreaView>
+  );
 }

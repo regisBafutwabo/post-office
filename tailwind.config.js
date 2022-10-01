@@ -2,6 +2,9 @@ module.exports = {
   content: ["./**/**.tsx"],
   theme: {
     extend: {
+      colors:{
+        'blue': "#59c1cc"
+      },
       fontFamily:{
         'poppins-black':['Poppins-Black'],
         'poppins-400': ['Poppins-Regular'],
