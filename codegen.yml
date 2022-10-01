@@ -1,0 +1,7 @@
+overwrite: true
+schema: "http://localhost:5001/api/moldy-goose"
+documents: "src/**/*.query.ts"
+generates:
+  src/Apollo/generated:
+    preset: "client"
+    plugins: []
